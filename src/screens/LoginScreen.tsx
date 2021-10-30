@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, SafeAreaView, StatusBar, Image, StyleSheet } from 'react-native'
 import { Box, Button, Input, Text } from 'native-base';
 
@@ -9,6 +9,13 @@ interface Props {
 const logoApp = '../assets/chatLogo.png' 
 
 const LoginScreen = ({ setUserName }: Props) => {
+
+    const [name, setName] = useState<string>('');
+
+    const onSubmmit = () => {
+        setUserName( name )
+    }
+
     return (
         <SafeAreaView style={styles.container} >
             <StatusBar 
@@ -27,9 +34,11 @@ const LoginScreen = ({ setUserName }: Props) => {
                     placeholder='Nombre del usuario'
                     placeholderTextColor='grey'
                     style={{color: '#fff', marginTop: 30,}}
+                    value={name}
+                    onChangeText={ txt => setName(txt) }
                 />
             </Box>
-            <Button style={styles.buttonLogin } >
+            <Button style={styles.buttonLogin } onPress={onSubmmit} >
                 <Text style={{color: '#ffffff'}} > Entrar </Text>
             </Button>
 
