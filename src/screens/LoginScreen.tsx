@@ -3,7 +3,7 @@ import { View, SafeAreaView, StatusBar, Image, StyleSheet } from 'react-native'
 import { Box, Button, Input, Text } from 'native-base';
 
 interface Props {
-    setUserName: any;
+    setUserName: ( value: string) => void;
 }
 
 const logoApp = '../assets/chatLogo.png' 
@@ -29,6 +29,7 @@ const LoginScreen = ({ setUserName }: Props) => {
                     style={styles.logo}
                 />
             </View>
+            
             <Box>
                 <Input 
                     placeholder='Nombre del usuario'
@@ -38,6 +39,7 @@ const LoginScreen = ({ setUserName }: Props) => {
                     onChangeText={ txt => setName(txt) }
                 />
             </Box>
+            
             <Button style={styles.buttonLogin } onPress={onSubmmit} >
                 <Text style={{color: '#ffffff'}} > Entrar </Text>
             </Button>

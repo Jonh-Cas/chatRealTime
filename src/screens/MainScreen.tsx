@@ -6,7 +6,7 @@ import LoginScreen from './LoginScreen';
 
 const MainScreen = () => {
 
-    const [userName, setUserName] = useState(null);
+    const [userName, setUserName] = useState<string>('');
 
     return (
         <Box style={styles.container} >
