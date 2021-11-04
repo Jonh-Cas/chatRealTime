@@ -19,7 +19,7 @@ const useFirebase = () => {
         const startCountRef = ref(db, 'general' );
         onValue( startCountRef, (snapshot) => {
             // let temp = [...snapshot.val()]
-            setMessages(snapshot.val());
+            setMessages(Object.values(snapshot.val()));
         });
     }
 

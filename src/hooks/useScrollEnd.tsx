@@ -1,18 +1,29 @@
 import { useEffect, useRef } from 'react';
+import {FlatList} from 'react-native'
 
 
 
 const useScrollToEnd = (messages: any ) => {
 
-
-    const scrollToEnd = useRef();
+    const chatScrollRef = useRef<FlatList>(null);
+    const isMounted = useRef(true);
 
     useEffect(() => {
         
-        return () => {
-            
+        if(isMounted){
+
+            if (chatScrollRef.current) {
+                chatScrollRef.current.scrollToEnd()
+            }
         }
-    }, [messages])
+            return () => {
+                isMounted.current = false;
+        }
+    }, [messages]);
+
+    return {
+        chatScrollRef,
+    }
 
 }
 
