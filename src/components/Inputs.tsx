@@ -29,6 +29,7 @@ const Inputs = ({ sendMessages }: Props) => {
                     placeholderTextColor='grey'
                     onChangeText={ txt => setMessage(txt) }
                     value={message}
+                    keyboardType='name-phone-pad'
                 />
                 <TouchableOpacity
                     onPress={ onSubmmit }
