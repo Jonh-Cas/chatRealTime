@@ -5,9 +5,9 @@ import { ref, push, onValue } from 'firebase/database';
 const useFirebase = () => {
 
     const isMounted = useRef(true);
-    const [messages, setMessages] = useState([{}]);
+    const [messages, setMessages] = useState([]);
 
-    const writeUserData = (text: string, time: string, username: string) => {
+    const writeUserData = (text: string, username: string, time: string) => {
         push(ref(db, 'general'), {
             text,
             time,
@@ -18,7 +18,8 @@ const useFirebase = () => {
     const readUserData = () =>{
         const startCountRef = ref(db, 'general' );
         onValue( startCountRef, (snapshot) => {
-            setMessages([snapshot.val()]);
+            // let temp = [...snapshot.val()]
+            setMessages(snapshot.val());
         });
     }
 

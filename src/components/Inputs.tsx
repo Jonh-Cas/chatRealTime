@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 
 interface Props {
-    sendMessages: ( value: string ) => void;
+    sendMessages: ( mess: string ) => void;
 }
 
 const Inputs = ({ sendMessages }: Props) => {
