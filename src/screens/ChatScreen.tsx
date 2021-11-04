@@ -22,6 +22,7 @@ const ChatScreen = () => {
     )
 }
 
+
 export default ChatScreen;
 const styles = StyleSheet.create({
     
