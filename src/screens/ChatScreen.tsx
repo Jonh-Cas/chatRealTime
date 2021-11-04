@@ -24,8 +24,10 @@ const ChatScreen = () => {
 
 export default ChatScreen;
 const styles = StyleSheet.create({
+    
     content: {
         flex: 1,
         justifyContent: 'space-between'
     }
+
 });
