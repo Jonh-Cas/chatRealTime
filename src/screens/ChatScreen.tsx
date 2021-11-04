@@ -1,13 +1,21 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import Inputs from '../components/Inputs';
-import Firebase from '../utils/Firebase';
 import 'firebase/database';
+import useFirebase from '../hooks/useFirebase';
+import moment from 'moment';
 
-const ChatScreen = () => {
+interface Props {
+    userName: string;
+}
+
+const ChatScreen = ({userName } :Props) => {
+
+    const {messages, writeUserData } = useFirebase();
 
     const sendMessages = (messages: string) => {
-        console.log(messages);
+        let time = moment().format('hh:mm a')
+        writeUserData(messages, userName, time );
     }
 
     return (

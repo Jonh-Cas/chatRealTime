@@ -12,7 +12,7 @@ const MainScreen = () => {
         <Box style={styles.container} >
            {
                (userName) 
-               ? (<ChatScreen /> ) 
+               ? (<ChatScreen userName={userName} /> ) 
                : (<LoginScreen setUserName={setUserName} /> )
            }
         </Box>
