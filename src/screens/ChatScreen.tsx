@@ -4,6 +4,8 @@ import Inputs from '../components/Inputs';
 import 'firebase/database';
 import useFirebase from '../hooks/useFirebase';
 import moment from 'moment';
+import { ScrollView } from 'native-base';
+import { map } from 'lodash';
 
 interface Props {
     userName: string;
