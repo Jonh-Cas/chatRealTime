@@ -6,10 +6,8 @@ import 'firebase/database';
 
 const ChatScreen = () => {
 
-    //TODO se tiene que conectar con Firebase Leer la documentacion
     const sendMessages = (messages: string) => {
         console.log(messages);
-        
     }
 
     return (
