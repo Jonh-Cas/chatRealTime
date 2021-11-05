@@ -18,24 +18,23 @@ interface Props {
 const Message = ({ userName, message, }: Props) => {
 
     const { text, username, time } = message;
-
-    const colorLetter = useColorLetter(username);
+     
+    const  colorLetter  = useColorLetter(username);
 
     const thisIsMe = userName === username;
 
 
     return (
         <View style={{ ...styles.container, justifyContent: thisIsMe ? 'flex-end' : 'flex-start', }} >
-            {!thisIsMe &&
-                <View style={{ ...styles.letterView, backgroundColor: `rgb(${colorLetter})` }} >
-                    <Text style={styles.letter} >{username.substr(0, 1)}</Text>
-                </View>
-            }
-            <View style={{ ...styles.viewChat, backgroundColor: thisIsMe ? '#f0f0f1' : '#4b86f0' }} >
+            { !thisIsMe &&
+            <View style={{...styles.letterView, backgroundColor: `rgb(${colorLetter})` }} >
+                <Text style={styles.letter} >{ username.substr(0, 1) }</Text>
+            </View>}
+            <View style={{ ...styles.viewChat, backgroundColor: thisIsMe ? '#f0f0f1' : '#4b86f0'  }} >
                 <Text style={{
                     ...styles.message,
-                    color: thisIsMe ? '#000' : '#ffffffcc',
-                    textAlign: thisIsMe ? 'right' : 'left',
+                    color: thisIsMe ? '#000' : '#ffffffcc'  ,
+                    textAlign: thisIsMe ? 'right' : 'left' ,
                 }} >{text}</Text>
                 <Text style={[styles.time, (thisIsMe) ? styles.timeLeft : styles.timeRight]} >{time}</Text>
             </View>
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     letterView: {
         height: 35,
         width: 35,
-        borderRadius: 35,
+        borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
         marginRight: 10,

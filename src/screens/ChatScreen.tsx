@@ -27,7 +27,7 @@ const ChatScreen = ({ userName }: Props) => {
         return () => {
 
         }
-    }, [messages])
+    }, [messages, Keyboard])
 
     console.log(chatScrollRef.current);
 
@@ -62,7 +62,8 @@ const ChatScreen = ({ userName }: Props) => {
                     <ScrollView
                         ref={chatScrollRef}
                         style={styles.chatView}
-                        // keyboardDismissMode='on-drag'
+                        keyboardDismissMode='on-drag'
+                        
                     >
                         {map(messages, (message, index) => (
                             <Message userName={userName} message={message} key={index} />
@@ -102,6 +103,7 @@ const styles = StyleSheet.create({
 
     chatView: {
         backgroundColor: '#1b2724',
+        
     }
 
 });

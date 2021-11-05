@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
-import {FlatList} from 'react-native'
+import {ScrollView} from 'react-native'
+
 
 
 
 const useScrollToEnd = (messages: any ) => {
 
-    const chatScrollRef = useRef<FlatList>(null);
+    const chatScrollRef = useRef<ScrollView>(null);
     const isMounted = useRef(true);
 
     useEffect(() => {
