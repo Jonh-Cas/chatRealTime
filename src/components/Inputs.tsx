@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, TouchableOpacity, Platform } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, Platform, TextInput } from 'react-native'
 import { Box, Input as InputNB  } from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -22,8 +22,8 @@ const Inputs = ({ sendMessages }: Props) => {
     return (
         
         <View style={styles.container} >
-            <Box style={styles.box} >
-                <InputNB 
+            <View style={styles.box} >
+                <TextInput 
                     placeholder='Mensaje...'
                     style={styles.input}
                     placeholderTextColor='grey'
@@ -41,7 +41,7 @@ const Inputs = ({ sendMessages }: Props) => {
                         style={{marginTop: 5 }}
                     />
                 </TouchableOpacity>
-            </Box>
+            </View>
         </View>
     )
 }

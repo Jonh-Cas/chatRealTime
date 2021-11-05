@@ -1,20 +1,22 @@
 import { useEffect, useRef } from 'react';
-import {ScrollView} from 'react-native'
+import {Keyboard, ScrollView, useWindowDimensions} from 'react-native'
 
 
 
 
 const useScrollToEnd = (messages: any ) => {
 
+    const {height } = useWindowDimensions();
     const chatScrollRef = useRef<ScrollView>(null);
-    const isMounted = useRef(true);
+    const isMounted = useRef<boolean>(true);
 
     useEffect(() => {
         
         if(isMounted){
 
             if (chatScrollRef.current) {
-                chatScrollRef.current.scrollToEnd()
+                // chatScrollRef.current.scrollTo({ y: height * height })
+                chatScrollRef.current.scrollToEnd()              
             }
         }
             return () => {
