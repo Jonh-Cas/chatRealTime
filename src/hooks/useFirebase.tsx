@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { db } from "../utils/Firebase";
 import { ref, push, onValue } from 'firebase/database';
 
-const useFirebase = () => {
+const useFirebase = (path: string) => {
 
     const isMounted = useRef(true);
     const [messages, setMessages] = useState([]);
@@ -16,7 +16,7 @@ const useFirebase = () => {
     }
 
     const readUserData = () =>{
-        const startCountRef = ref(db, 'general' );
+        const startCountRef = ref(db, path );
         onValue( startCountRef, (snapshot) => {
             // let temp = [...snapshot.val()]
             setMessages(Object.values(snapshot.val()));

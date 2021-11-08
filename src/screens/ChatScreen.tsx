@@ -14,7 +14,7 @@ interface Props {
 const ChatScreen = ({ userName }: Props) => {
 
     // const { height } = useWindowDimensions();
-    const { messages, writeUserData } = useFirebase();
+    const { messages, writeUserData } = useFirebase('general');
     const { chatScrollRef } = useScrollToEnd(messages);
 
 
