@@ -27,7 +27,6 @@ const ChatScreen = ({ userName }: Props) => {
         return <ActivityIndicator size={50} color='red' style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }} />
 
     return (
-
         <View style={styles.content} >
 
             <View style={styles.headerChat} >
